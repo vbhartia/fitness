@@ -1,0 +1,45 @@
+<%= @user_to_render.full_name %> Work Out Summary
+
+<br/>
+<br/>
+
+Summary Tiles:
+<br/>
+- Workout sessions this month
+<br/>
+- Total time worked out
+<br/>
+- Most number of days without working out
+
+<br/>
+<br/>
+
+Recent work out sessions
+
+	<div class="container">
+
+		<%= render_work_out(current_user.workouts.first, 'long') %>		
+
+		<% current_user.workouts.each do |workout| %>
+
+			<% render_work_out(workout, 'long') %>
+			<br/>
+			<br/>
+
+		<% end %>
+
+		<div class="offset10">
+		</div>
+
+
+	</div>
+
+
+<br/>
+<br/>
+<br/>
+Calender View
+
+
+
+

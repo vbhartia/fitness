@@ -2,13 +2,23 @@
 <html>
 <head>
   <title>Fitness</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
+      <script src='http://codeorigin.jquery.com/color/jquery.color-2.1.2.min.js'></script>
+      
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
 
-<%= yield %>
+	<%= render "layouts/shared/header_menu" %>
+
+	<%= yield %>
+
 
 </body>
+
+
 </html>

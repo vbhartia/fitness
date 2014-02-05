@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-1">
+
+		<%= running_object.workout.user.first_name %>
+		<%= running_object.workout.user.last_name %>
+
+		<br/>
+
+		<%= image_tag running_object.workout.user.profile_pic_url %>
+		
+		<br/>
+
+	</div>
+
+	<div class='col-md-3'>
+			Ran
+
+			<%= running_object.distance %> Miles on
+
+			<%= running_object.workout.created_at %>
+	</div>
+  </div>
+</div>
+
+
+

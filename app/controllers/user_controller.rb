@@ -45,4 +45,10 @@ class UserController < ApplicationController
 	  end
 	end
 
+	def profile
+	end
+
+	def home
+	end
+
 end

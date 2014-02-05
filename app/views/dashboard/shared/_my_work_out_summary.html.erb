@@ -1,0 +1,29 @@
+
+<div class="panel panel-primary">
+	<h1>
+		My Workout Summary
+	</h1>
+
+		<%= render 'workouts/shared/new_workout'
+		%>
+
+	<br/>
+
+	<ul class="list-inline">
+    
+		<% current_user.workouts[-3..-1].each do |workout| %>
+
+
+			<li>
+				<%= render_work_out(workout, 'tile') %>
+			</li>
+
+		<% end %>
+
+	</ul>
+
+<br/>
+<br/>
+<br/>
+
+</div>

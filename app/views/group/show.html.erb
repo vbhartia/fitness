@@ -1,0 +1,27 @@
+
+<h1>
+	<%= @group_to_render.name%>
+</h1>
+
+<% @group_to_render.users.each do |user| %>
+
+	<%= user.full_name %>
+
+<% end %>
+
+<hr>
+	
+	<% @work_outs_to_render.each do |work_out| %>
+	
+		<%= render_work_out_in_group(work_out) %>
+
+		<br/>
+
+	<% end %>
+
+</hr>
+
+
+<br/>
+
+
