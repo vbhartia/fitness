@@ -9,17 +9,21 @@
 
 <% end %>
 
-<hr>
+<hr/>
 	
+	<h1>
+		Recent Workouts
+	</h1>
+
 	<% @work_outs_to_render.each do |work_out| %>
 	
 		<%= render_work_out_in_group(work_out) %>
 
-		<br/>
+		<hr/>
 
 	<% end %>
 
-</hr>
+<hr/>
 
 
 <br/>

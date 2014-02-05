@@ -11,13 +11,16 @@
 
 	<ul class="list-inline">
     
-		<% current_user.workouts[-3..-1].each do |workout| %>
+		<% unless current_user.workouts.empty? %>
+
+			<% current_user.workouts.each do |workout| %>
 
 
-			<li>
-				<%= render_work_out(workout, 'tile') %>
-			</li>
+				<li>
+					<%= render_work_out(workout, 'tile') %>
+				</li>
 
+			<% end %>
 		<% end %>
 
 	</ul>

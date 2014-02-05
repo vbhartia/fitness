@@ -19,9 +19,73 @@
 			<%= running_object.distance %> Miles on
 
 			<%= running_object.workout.created_at %>
+
+			<br/>
+
+			<!-- Button trigger modal -->
+			
+			<a href="#" data-toggle="modal" data-target="#<%= running_object.workout.id %>">
+  				Give Kudos
+			</a>
+
+
+
 	</div>
+
+	<div class = 'col-md-3'>
+		Props for this workout
+
+		<% unless running_object.workout.comments.first.nil? %>
+
+			<% unless running_object.workout.comments.first.monsterawardcomment.nil? %>
+
+				<%= running_object.workout.comments.first.monsterawardcomment %>
+
+				<%= running_object.workout.comments.first.user.full_name %>
+
+				<%= image_tag 'arnold_monster_animated.gif' %>
+
+			<% end %>
+		<% end %>
+
+	
+	</div>
+
+
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="<%= running_object.workout.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Give Kudos to Varun</h4>
+      </div>
+      <div class="modal-body">
+      	Choose your kudos!
+
+      	<%= image_tag 'arnold_monster_animated.gif' %>
+
+        <%= form_tag(give_kudos_path(@group_to_render.id)) do %>
+  			
+        	<%= hidden_field_tag 'workout_id', running_object.workout.id %>
+
+	  		<%= submit_tag("Give Kudos") %>
+			
+		<% end %>	
+
+
+        
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 

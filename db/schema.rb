@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140131082040) do
+ActiveRecord::Schema.define(:version => 20140205064548) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(:version => 20140131082040) do
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "workout_id"
+    t.string   "comment_type"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "friend_lists", :force => true do |t|
@@ -46,12 +54,26 @@ ActiveRecord::Schema.define(:version => 20140131082040) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "monsterawardcomments", :force => true do |t|
+    t.integer  "comment_id"
+    t.string   "monster_graphic"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "runnings", :force => true do |t|
     t.integer  "workout_id"
     t.decimal  "distance"
     t.decimal  "time"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "text_comment", :force => true do |t|
+    t.integer  "comment_id"
+    t.string   "comment_text"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

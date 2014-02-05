@@ -25,6 +25,7 @@ Fitness::Application.routes.draw do
 
   #********* Group **********#
   get '/groups/:name' => 'group#show', as: 'show_group'
+  post '/groups/:name/give_kudos' => 'group#give_kudos', as: 'give_kudos'
 
   
 end
