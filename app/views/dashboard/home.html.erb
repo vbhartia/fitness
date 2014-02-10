@@ -1,20 +1,22 @@
-Home page!
+<div class="container">
+
+	Home page!
+
+	<%= render 'workouts/shared/new_workout' %>
 
 
-<%= render 'workouts/shared/new_workout' %>
 
 
 
+	<!-- Notifications -->
+	<%# render 'dashboard/shared/notifications_home' %>
 
+	<!-- My Work Outs -->
+	<%= render 'dashboard/shared/my_work_out_summary' %>
 
-<!-- Notifications -->
-<%= render 'dashboard/shared/notifications_home' %>
+	<!-- My Groups -->
+	<%# render 'dashboard/shared/my_group' %>
 
-<!-- My Work Outs -->
-<%= render 'dashboard/shared/my_work_out_summary' %>
-
-<!-- My Groups -->
-<%= render 'dashboard/shared/my_group' %>
-
+</div>
 
  
