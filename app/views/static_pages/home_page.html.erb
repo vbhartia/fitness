@@ -57,13 +57,32 @@
   }
 
   .margin-thanks {
-    margin-top: 300px;
+    margin-top: 100px;
     margin-bottom: 300px
   }
 
   .sign-up-modal-social {
     text-align:right;
 border-left:solid grey;
+  }
+
+  .image-circle {
+    border-radius: 50%;
+    box-shadow: 0px 20px 40px rgba(0,0,0,.5);
+  }
+
+  .blurred-edges {
+    box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+
+  }
+
+  .center-y{
+    vertical-align:middle;
+    height: 300px;
+  }
+
+  .sign-up-feature {
+    margin-top: 150px;
   }
 
 </style>
@@ -126,8 +145,6 @@ border-left:solid grey;
                   </ul>
         </li>
 
-
-            
               <%else %>
 
                   <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#SignUpModal">Sign Up</button>
@@ -249,31 +266,33 @@ border-left:solid grey;
 
         <h1>
           <span class="glyphicon glyphicon-log-in"></span>
+          &nbsp
           Get Started Now! 
         </h1>
 
-        <h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <br/>
+            <h4>
+              Its super easy, simply create an account with your email or facebook and start recording!
+            </h4>
 
-          &nbsp
-          &nbsp
-          &nbsp
-
-        Its super easy, simply create an account with your email or facebook and start recording!
-
-        </h4>
-
-        <br/>
-
-
-        <div class="pull-right margin-right-buttons">
+            <div class="sign-up-feature">
+              <center>
 
               <button type="button" class="btn btn-primary btn-lg">Log in</button>
-              &nbsp
+              &nbsp &nbsp &nbsp
               <button type="button" class="btn btn-primary btn-lg">Sign up</button>
+            </center>
+            </div>
+          </div>
+
+          <div class="col-lg-offset-1 col-lg-1">
+            <%= image_tag "homepage/resized-sprinting-girl-Copy.jpg", :class => "image-circle" %>
+          </div>
+
         </div>
-
-
-        
+        <br/>        
 
         </div>
       </div>
