@@ -96,36 +96,35 @@
 </style>
 
 <div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-static-top border-rounded" role="navigation">
       <div class="container">
-        <div class="navbar navbar-inverse navbar-static-top border-rounded" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">Easy Workout Tracker!</a>
-            </div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Easy Workout Tracker!</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+        </div>
+          
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">How it works</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right margin-right">
 
-            
-            <div class="navbar-collapse collapse">
+            <% if user_signed_in? %>
 
-              <ul class="nav navbar-nav">
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">How it works</a></li>
-              </ul>
+              <li>
+                <button class="btn btn-primary navbar-btn" onclick="location.href='/home'">
+                My Workouts 
+                </button>
+              </li>
 
-
-              <div class="pull-right margin-right">
-                <ul class="nav navbar-nav">
-
-              <% if user_signed_in? %>
-
-                <li>
-                  <button class="btn btn-primary navbar-btn" onclick="location.href='/home'">
-                  My Workouts 
-                  </button>
-                </li>
-              
-                  </ul>
-
-                  <ul class="navbar-nav navbar-right">
+              <ul class="navbar-nav navbar-right">
 
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle margin-right" data-toggle="dropdown">
@@ -136,46 +135,42 @@
 
                     <b class="caret"></b>
                   </a>
-          
+        
                   <ul class="dropdown-menu">
-                  
-                  <li>
-                    <a href="#">
-                      Profile Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/users/sign_out">
-                      Log Out
-                    </a>
-                  </li>
-            
+                
+                    <li>
+                      <a href="#">
+                        Profile Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/users/sign_out">
+                        Log Out
+                      </a>
+                    </li>
+          
                   </ul>
-        </li>
+                </li>
+              </ul>
 
-              <%else %>
-
+              <% else %>
+                <li>
                   <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#SignUpModal">Sign Up</button>
 
-                  &nbsp
+                  &nbsp                   &nbsp
+      
 
                   <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#LoginModal">Log in</button>
-
-
+                </li>
 
               <% end %>
               </ul>
-              </div>
-
-
-
-
-            </div>
-          </div>
         </div>
-
       </div>
     </div>
+  </div>
+</div>
+
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -188,7 +183,7 @@
       <div class="carousel-inner">
         <div class="item active">
           
-          <%= image_tag "homepage/yoga.jpg" %>
+          <%= image_tag "homepage/yoga.jpg", :class => "img-responsive" %>
 
           <div class="container">
             <div class="carousel-caption">
@@ -200,7 +195,7 @@
         </div>
         <div class="item">
 
-          <%= image_tag "homepage/women-working-out.jpg" %>
+          <%= image_tag "homepage/women-working-out.jpg", :class => "img-responsive" %>
 
           <div class="container">
             <div class="carousel-caption">
@@ -212,7 +207,7 @@
         </div>
         <div class="item">
 
-          <%= image_tag "homepage/rsz_people_running_on_treadmills.jpg" %>
+          <%= image_tag "homepage/rsz_people_running_on_treadmills.jpg", :class => "img-responsive" %>
 
 
           <div class="container">
@@ -233,8 +228,6 @@
 <div class="container marketing">
   <div class="row">
         <div class="col-lg-4">
-          
-
           <span class="mid-size-icons glyphicon glyphicon-pencil">
           </span>
 
@@ -323,7 +316,7 @@
               <div class="col-lg-4">
                 <br/>
 
-                 <%= image_tag "homepage/people-with-thank-you-sign.jpg", :class => "image-circle" %>
+                 <%= image_tag "homepage/people-with-thank-you-sign.jpg", :class => "image-circle img-responsive" %>
 
               </div>
               <div class="col-lg-offset-2 col-lg-6">
