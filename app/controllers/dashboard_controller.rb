@@ -1,5 +1,7 @@
 class DashboardController <ApplicationController
 
+before_filter :check_for_mobile, :only => [:home]
+
   def home
   end
 
